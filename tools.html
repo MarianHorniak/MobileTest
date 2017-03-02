@@ -12,6 +12,9 @@
      <button id="btnShoLog" onclick="showLog()" >Show log</button>
     <button id="btnClearLog" onclick="clearLog()" >Clear log</button>
 
+    <button id="btnNotif" onclick="notify()" >Notify</button>
+
+
     <hr />
     Inputs: <br />
     <input id="inp1"  value="0903454823"/>
@@ -21,6 +24,15 @@
     <label id="lblResult">results....</label>
 
     <script>
+
+        function notify() {
+            try {
+                navigator.notification.alert("Notify message", alertCallback, "Alert form APP", "OK")
+            }
+            catch (err) {
+                showerror(err);
+            }
+        };
 
 
         function showLog() {
@@ -75,6 +87,11 @@
             document.getElementById("lblResult").innerHTML = err.message;
         };
         
+
+        function alertCallback() {
+            LogArray.addMessage("alertCallback OK", "Info");
+        };
+
         function onSuccess() {
             LogArray.addMessage("onSuccess OK", "Info");
         };

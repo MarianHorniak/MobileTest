@@ -2,8 +2,8 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "sk.datastream.mobiletestinternal"
-        versionCode = "108"
-        version     = "1.0.8">
+        versionCode = "109"
+        version     = "1.0.9">
  
     <name>Mobile TESTS</name>
   
@@ -36,7 +36,7 @@
   <plugin name="cordova-plugin-geolocation" spec="*"/>
   <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
   <plugin name="cordova-plugin-dialogs" spec="*"/>
-  <plugin name="CordovaCallNumberPlugin" spec="*"/>
+  <!--<plugin name="CordovaCallNumberPlugin" spec="*"/>-->
   
   <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.1" />
   <!--<plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" source="npm" />-->
