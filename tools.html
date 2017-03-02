@@ -63,6 +63,7 @@
             try {
                 var el = document.getElementById("inp1");
                 var telNo = el.innerHTML;
+                window.plugins.CallNumber.callNumber(onSuccess, onError, telNo);
             }
             catch (err) {
                 showerror(err);
@@ -74,6 +75,13 @@
             document.getElementById("lblResult").innerHTML = err.message;
         };
         
+        function onSuccess() {
+            LogArray.addMessage("onSuccess OK", "Info");
+        };
+
+        function onError() {
+            LogArray.addMessage("onError", "Error");
+        };
 
         function currDate() {
             try {
