@@ -43,6 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="config.xml" />
+    <Content Include="tools.html" />
     <Content Include="fg.html" />
     <Content Include="img\phonegapicon.png" />
     <Content Include="index.html" />

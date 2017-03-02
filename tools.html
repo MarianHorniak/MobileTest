@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mobile TESTS->Tools</title>
+</head>
+<body>
+    <div style="background-color:#00FFFF; width:100%; font-size: large;"><a href="index.html" style="background-color: #FFFF00">Back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools</div> <hr />
+
+    <button id="btnDeviceInfo" onclick="getinfoclick()" >Get device info</button>
+    <button id="btnCall" onclick="callNumber()" >Call number</button>
+
+    <hr />
+    Inputs:
+    <input id="inp1"  value="0903454823"/>
+
+    <hr />
+    Results:
+    <label id="lblResult">results....</label>
+
+    <script>
+        function getinfoclick() {
+            try{
+                var s = getDeviceInfo();
+                var el = document.getElementById("lblResult");
+                el.innerHTML = s;
+            }
+            catch(err) {
+                showerror(err);
+            }
+        };
+
+        function callNumber() {
+            try {
+                var el = document.getElementById("inp1");
+                var telNo = el.innerHTML;
+            }
+            catch (err) {
+                showerror(err);
+            }
+
+        }
+
+    </script>
+
+    <script src="phonegap.js"></script>
+    <script src="Scripts/Tools.js"></script>
+
+</body>
+</html>
