@@ -8,6 +8,8 @@
 
     <button id="btnDeviceInfo" onclick="getinfoclick()" >Get device info</button>
     <button id="btnCall" onclick="callNumber()" >Call number</button>
+    <button id="btnCurrDate" onclick="currDate()" >Get Date</button>
+
 
     <hr />
     Inputs:
@@ -33,6 +35,17 @@
             try {
                 var el = document.getElementById("inp1");
                 var telNo = el.innerHTML;
+            }
+            catch (err) {
+                showerror(err);
+            }
+
+        };
+
+        function currDate() {
+            try {
+                var el = document.getElementById("lblResult");
+                el.innerHTML = Date();
             }
             catch (err) {
                 showerror(err);
