@@ -1,22 +1,19 @@
 ﻿
-var Logs = "";
-
 
 function Log(message)
 {
     console.log(message);
+    LogArray.addMessage(message, "Log");
 }
 
 
 function Alert(message)
 {
     alert(message);
+    LogArray.addMessage(message, "Alert");
 }
 
-function showerror(err)
-{
-    document.getElementById("demo").lblResult = err.message;
-}
+
 
 function startTimer()
 {
@@ -30,6 +27,8 @@ function doTimeout() {
 
 function getDeviceInfo()
 {
+    LogArray.addMessage("getDeviceInfo start", "Info");
+
     var sRet = "";
     sRet+="cordova: " +device.cordova;
     sRet += "; model: " + device.model;
@@ -39,6 +38,6 @@ function getDeviceInfo()
     sRet += "; manufacturer: " + device.manufacturer;
     sRet += "; isVirtual: " + device.isVirtual;
     sRet += "; serial: " + device.serial;
-
+    LogArray.addMessage("getDeviceInfo end", "Info");
     return sRet;
 }

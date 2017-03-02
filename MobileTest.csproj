@@ -43,12 +43,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="config.xml" />
+    <Content Include="LogView.html" />
+    <Content Include="Scripts\LogArray.js" />
     <Content Include="tools.html" />
     <Content Include="fg.html" />
     <Content Include="img\phonegapicon.png" />
     <Content Include="index.html" />
     <Content Include="Scripts\Tools.js" />
-    <Content Include="test1.html" />
     <Content Include="tts.html" />
     <Content Include="Web.config" />
   </ItemGroup>
