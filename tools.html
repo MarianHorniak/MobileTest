@@ -27,7 +27,8 @@
 
         function notify() {
             try {
-                navigator.notification.alert("Notify message", alertCallback, "Alert form APP", "OK")
+                LocalNotification.schedule("1", "Notify message");
+                //navigator.notification.alert("Notify message", alertCallback, "Alert form APP", "OK")
             }
             catch (err) {
                 showerror(err);
@@ -113,14 +114,16 @@
 
         function onLoad() {
 
-            document.addEventListener("deviceready", onDeviceReady, false);
-            LogArray.addMessage("onDeviceReady", "Info");
-            showerror("device ready starts");
+            app.onLoad();
+            //document.addEventListener("deviceready", onDeviceReady, false);
+            //LogArray.addMessage("onDeviceReady", "Info");
+            //showerror("device ready starts");
         };
 
         function onDeviceReady() {
             LogArray.addMessage("onDeviceReady OK", "Info");
             showerror("device ready OK");
+            app.initialize();
         };
 
     </script>
@@ -128,6 +131,7 @@
     <script src="phonegap.js"></script>
     <script src="Scripts/Tools.js"></script>
     <script src="Scripts/LogArray.js"></script>
-
+    <script src="Scripts/LocalNotification.js"></script>
+    <script src="Scripts/App.js"></script>
 </body>
 </html>

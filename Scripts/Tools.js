@@ -13,6 +13,11 @@ function Alert(message)
     LogArray.addMessage(message, "Alert");
 }
 
+function Info(message) {
+    alert(message);
+    LogArray.addMessage(message, "Info");
+}
+
 
 
 function startTimer()
@@ -21,7 +26,7 @@ function startTimer()
 }
 
 function doTimeout() {
-    Navigator
+    //Navigator
     Alert('Fired');
 }
 

@@ -9,9 +9,6 @@
     <button id="btnShoLog" onclick="showLog()" >Show log</button>
     <button id="btnClearLog" onclick="clearLog()" >Clear log</button>
 
-
-
-
     <hr />
     Results:<br />
     <label id="lblResult">results....</label>
@@ -46,9 +43,6 @@
             document.getElementById("lblResult").innerHTML = err.message;
         };
         
-
-
-
         function onLoad() {
 
             document.addEventListener("deviceready", onDeviceReady, false);
