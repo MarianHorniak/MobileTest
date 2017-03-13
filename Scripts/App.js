@@ -23,16 +23,16 @@
         //$('#unalarmButton').hide();
 
         try {
-            document.addEventListener('pause', function () { app.info("Pause"); self.inBackground = true; }, false);
-            document.addEventListener('resume', function () { app.info("Resume"); self.inBackground = false; }, false);
-            document.addEventListener("offline", function () { app.info("Offline"); }, false);
-            document.addEventListener("online", function () { app.info("Online"); }, false);
+            document.addEventListener('pause', function () { app.log("Pause"); self.inBackground = true; }, false);
+            document.addEventListener('resume', function () { app.log("Resume"); self.inBackground = false; }, false);
+            document.addEventListener("offline", function () { app.log("Offline"); }, false);
+            document.addEventListener("online", function () { app.log("Online"); }, false);
             document.addEventListener("unload", function () {
                 app.info("Unload");
                 if (cordova) {
                     cordova.require('cordova/plugin/powermanagement').release(
-                                function () { app.info("powermanagement Release"); },
-                                function () { app.info("powermanagement Error Release"); }
+                                function () { app.log("powermanagement Release"); },
+                                function () { app.log("powermanagement Error Release"); }
                         );
                 }
                 LocalNotification.clearAll();
