@@ -20,12 +20,18 @@ var LocalNotification = {
         }
 
         this.hasPermission(function () {
-            cordova.plugins.notification.local.get(id, function (notifications) {
-                if (notifications.length === 0)
-                    cordova.plugins.notification.local.schedule({ id: id, text: text });
-                else
-                    cordova.plugins.notification.local.update({ id: id, text: text });
-            })
+            if (test) {
+                cordova.plugins.notification.local.schedule({ id: id, text: text });
+                app.log("LocalNotification.schedule: id:" + id + " text:" + text);
+            }
+            else {
+                cordova.plugins.notification.local.get(id, function (notifications) {
+                    if (notifications.length === 0)
+                        cordova.plugins.notification.local.schedule({ id: id, text: text });
+                    else
+                        cordova.plugins.notification.local.update({ id: id, text: text });
+                })
+            }
         });
     },
     clear: function (id, callback) {
