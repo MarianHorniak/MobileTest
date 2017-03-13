@@ -23,7 +23,7 @@
   <icon src="img/phonegapicon.png"       gap:platform="ios" width="76"  height="76"  />
 
   <preference name="load-url-timeout" value="60000" />
-  <preference name="phonegap-version" value="*" />
+  <preference name="phonegap-version" value="cli-6.5.0" />
   <preference name="DisallowOverscroll" value="true" />
   <preference name="exit-on-suspend" value="false" />
   <preference name="KeepRunning " value="true" />
