@@ -104,7 +104,7 @@
 
 
         if (app.isDevice) {
-            app.clickEvent = "tap";
+            app.clickEvent = "tap"; 
             document.addEventListener("deviceready", function () { app.initialize(); }, false);
         } else {
             app.clickEvent = "click";
