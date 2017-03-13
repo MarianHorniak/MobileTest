@@ -29,15 +29,16 @@
   <preference name="KeepRunning " value="true" />
   <preference name="Fullscreen" value="true" />
   <preference name="loadingDialog" value="Driver, Starting" />
+  <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
   <access origin="*" />
 
-  <plugin name="cordova-plugin-media" spec="~2.4.0" />
+  <plugin name="cordova-plugin-media" spec="*" />
   <plugin name="cordova-plugin-geolocation" spec="*"/>
-  <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
+  <plugin name="cordova-plugin-inappbrowser" spec="*" />
   <!--<plugin name="cordova-plugin-dialogs" spec="*"/>-->
     
-  <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.1" />
+  <plugin name="de.appplant.cordova.plugin.local-notification" spec="*" />
   <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="*" />
 
   <feature name="http://api.phonegap.com/1.0/geolocation"/>
