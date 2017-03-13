@@ -63,11 +63,10 @@ var LocalNotification = {
         }
 
         cordova.plugins.notification.local.hasPermission(function (granted) {
-            self.allowSedule = granted;
             //app.info(granted ? "Local Notification Granted" : "Local Notification Not Granted");
 
             if (granted) {
-
+                LocalNotification.allowSedule = true;
                 app.log("LocalNotification.hasPermission: Granted");
                 cordova.plugins.notification.local.setDefaults({
                     title: "Mobile test",
@@ -99,12 +98,13 @@ var LocalNotification = {
     },
     registerPermission: function () {
         if (!cordova || !cordova.plugins || !cordova.plugins.notification) {
-            this.allowSedule = false;
+            LocalNotification.allowSedule = true;
             return;
         }
 
         cordova.plugins.notification.local.registerPermission(function (granted) {
-            app.info(granted ? "Local Notification Granted" : "Local Notification Not Granted");
+            LocalNotification.allowSedule = true;
+            app.log(granted ? "Local Notification Granted" : "Local Notification Not Granted");
         });
     }
 }
