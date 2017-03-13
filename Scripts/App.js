@@ -75,9 +75,6 @@
     initialize: function () {
         app.log("app.initialize");
 
-        app.log("app.userAgent: " + app.userAgent);
-        app.log("app.platform: " + app.platform);
-        app.log("app.isDevice: " + app.isDevice);
         var self = this;
         this.pages = {};
 
@@ -92,7 +89,7 @@
         //});
     },
     onLoad: function () {
-
+        app.log("app.onLoad");
         app.geolocation = false;
         if (navigator.geolocation) {
             app.geolocation = navigator.geolocation;
@@ -102,10 +99,13 @@
         app.isDevice = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/);
         app.platform = navigator.platform;
 
+        app.log("app.userAgent: " + app.userAgent);
+        app.log("app.platform: " + app.platform);
+        app.log("app.isDevice: " + app.isDevice);
 
         if (app.isDevice) {
             app.clickEvent = "tap"; 
-            document.addEventListener("deviceready", function () { app.initialize(); }, false);
+            document.addEventListener("deviceready", function () { app.log("event: deviceready"); app.initialize(); }, false);
         } else {
             app.clickEvent = "click";
             app.initialize();

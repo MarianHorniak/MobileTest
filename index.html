@@ -3,7 +3,7 @@
 <head>
     <title>Mobile TESTS->Tools</title>
 </head>
-<body  onload="onLoad()">
+<body>   <!--onload="onLoad()"-->
     <div style="background-color:#00FFFF; width:100%; font-size: large;"><a href="index.html" style="background-color: #FFFF00">Back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools</div> <hr />
     Actions: <br />
     <button id="btnDeviceInfo" onclick="getinfoclick()" >Get device info</button>
@@ -22,6 +22,14 @@
     <hr />
     Results: <br />
     <label id="lblResult">results....</label>
+
+    
+
+    <script src="cordova.js"></script>
+    <script src="Scripts/Tools.js"></script>
+    <script src="Scripts/LogArray.js"></script>
+    <script src="Scripts/LocalNotification.js"></script>
+    <script src="Scripts/App.js"></script>
 
     <script>
 
@@ -62,12 +70,12 @@
         };
 
         function getinfoclick() {
-            try{
+            try {
                 var s = getDeviceInfo();
                 var el = document.getElementById("lblResult");
                 el.innerHTML = s;
             }
-            catch(err) {
+            catch (err) {
                 showerror(err);
             }
         };
@@ -87,7 +95,7 @@
         function showerror(err) {
             document.getElementById("lblResult").innerHTML = err.message;
         };
-        
+
 
         function alertCallback() {
             LogArray.addMessage("alertCallback OK", "Info");
@@ -112,26 +120,20 @@
 
         };
 
-        function onLoad() {
+        //function onLoad() {
 
-            app.onLoad();
-            //document.addEventListener("deviceready", onDeviceReady, false);
-            //LogArray.addMessage("onDeviceReady", "Info");
-            //showerror("device ready starts");
-        };
+        //    app.onLoad();
+        //    //document.addEventListener("deviceready", onDeviceReady, false);
+        //    //LogArray.addMessage("onDeviceReady", "Info");
+        //    //showerror("device ready starts");
+        //};
 
-        function onDeviceReady() {
-            LogArray.addMessage("onDeviceReady OK", "Info");
-            showerror("device ready OK");
-            app.initialize();
-        };
-
+        //function onDeviceReady() {
+        //    LogArray.addMessage("onDeviceReady OK", "Info");
+        //    showerror("device ready OK");
+        //    app.initialize();
+        //};
+        app.onLoad();
     </script>
-
-    <script src="phonegap.js"></script>
-    <script src="Scripts/Tools.js"></script>
-    <script src="Scripts/LogArray.js"></script>
-    <script src="Scripts/LocalNotification.js"></script>
-    <script src="Scripts/App.js"></script>
 </body>
 </html>
