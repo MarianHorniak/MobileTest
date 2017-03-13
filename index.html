@@ -35,7 +35,7 @@
 
         function notify() {
             try {
-                LocalNotification.schedule("1", "Notify message");
+                LocalNotification.schedule("1", "Notify message", true);
                 //navigator.notification.alert("Notify message", alertCallback, "Alert form APP", "OK")
             }
             catch (err) {
