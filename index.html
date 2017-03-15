@@ -13,6 +13,7 @@
     <button id="btnClearLog" onclick="clearLog()" >Clear log</button>
 
     <button id="btnNotif" onclick="notify()" >Notify</button>
+    <button id="btnNavig" onclick="openNavigator()" >Call number</button>
 
 
     <hr />
@@ -35,14 +36,21 @@
 
         function notify() {
             try {
-                LocalNotification.schedule("1", "Notify message", true);
-                //navigator.notification.alert("Notify message", alertCallback, "Alert form APP", "OK")
+                LocalNotification.schedule("1", "Notify message: " + Date.now(), true);
             }
             catch (err) {
                 showerror(err);
             }
         };
 
+        function openNavigator() {
+            try {
+                Navigator.navigate("Nitra Dlhá 10");
+            }
+            catch (err) {
+                showerror(err);
+            }
+        };
 
         function showLog() {
             try {
@@ -82,9 +90,7 @@
 
         function callNumber() {
             try {
-                var el = document.getElementById("inp1");
-                var telNo = el.innerHTML;
-                window.plugins.CallNumber.callNumber(onSuccess, onError, telNo);
+                placeCall("0905791793");
             }
             catch (err) {
                 showerror(err);

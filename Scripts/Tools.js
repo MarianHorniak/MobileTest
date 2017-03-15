@@ -46,3 +46,16 @@ function getDeviceInfo()
     LogArray.addMessage("getDeviceInfo end", "Info");
     return sRet;
 }
+
+function placeCall (num) {
+    if (!num)
+        return;
+
+    if (window.cordova && cordova.InAppBrowser) {
+        cordova.InAppBrowser.open('tel:' + num.replace(/\s/g, ''), '_system');
+    }
+    else
+    {
+        app.log("Unsupported call");
+    }
+}
