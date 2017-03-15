@@ -20,24 +20,28 @@ var LocalNotification = {
         }
 
         this.hasPermission(function () {
-            if (test) {
-                try{
-                    cordova.plugins.notification.local.update({ id: id, text: text });
-                    app.log("LocalNotification.update: id:" + id + " text:" + text);
-                }
-                catch (err) {
-                    cordova.plugins.notification.local.schedule({ id: id, text: text });
-                    app.log("LocalNotification.schedule: id:" + id + " text:" + text);
-                }
-            }
-            else {
+            //if (test) {
+            //    try{
+            //        cordova.plugins.notification.local.update({ id: id, text: text });
+            //        app.log("LocalNotification.update: id:" + id + " text:" + text);
+            //    }
+            //    catch (err) {
+            //        cordova.plugins.notification.local.schedule({ id: id, text: text });
+            //        app.log("LocalNotification.schedule: id:" + id + " text:" + text);
+            //    }
+            //}
+            //else {
                 cordova.plugins.notification.local.get(id, function (notifications) {
-                    if (notifications.length === 0)
+                    if (!notifications || notifications.length === 0) {
                         cordova.plugins.notification.local.schedule({ id: id, text: text });
-                    else
+                        app.log("LocalNotification.schedule: id:" + id + " text:" + text);
+                    }
+                    else {
                         cordova.plugins.notification.local.update({ id: id, text: text });
+                        app.log("LocalNotification.update: id:" + id + " text:" + text);
+                    }
                 })
-            }
+            //}
         });
     },
     clear: function (id, callback) {
