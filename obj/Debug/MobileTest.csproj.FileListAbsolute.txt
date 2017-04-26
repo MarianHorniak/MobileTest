@@ -3,3 +3,8 @@ d:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\bin\MobileTest.pdb
 d:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\obj\Debug\MobileTest.csprojResolveAssemblyReference.cache
 d:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\obj\Debug\MobileTest.dll
 d:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\obj\Debug\MobileTest.pdb
+c:\Users\pko\Documents\GitHub\MobileTest\bin\MobileTest.dll
+c:\Users\pko\Documents\GitHub\MobileTest\bin\MobileTest.pdb
+c:\Users\pko\Documents\GitHub\MobileTest\obj\Debug\MobileTest.csprojResolveAssemblyReference.cache
+c:\Users\pko\Documents\GitHub\MobileTest\obj\Debug\MobileTest.dll
+c:\Users\pko\Documents\GitHub\MobileTest\obj\Debug\MobileTest.pdb

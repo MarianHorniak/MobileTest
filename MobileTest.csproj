@@ -45,7 +45,6 @@
     <Content Include="config.xml" />
     <Content Include="LogView.html" />
     <Content Include="Scripts\LogArray.js" />
-    <Content Include="tools.html" />
     <Content Include="fg.html" />
     <Content Include="img\phonegapicon.png" />
     <Content Include="index.html" />
