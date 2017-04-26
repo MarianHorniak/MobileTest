@@ -21,19 +21,32 @@ var LocalNotification = {
 
         this.hasPermission(function () {
             try {
-                cordova.plugins.notification.local.get(id, function (notifications) {
-                    if (!notifications || notifications.length === 0) {
-                        cordova.plugins.notification.local.schedule({ id: id, text: text });
-                        app.log("LocalNotification.schedule: id:" + id + " text:" + text);
-                    }
-                    else {
-                        cordova.plugins.notification.local.update({ id: id, text: text });
-                        app.log("LocalNotification.update: id:" + id + " text:" + text);
-                    }
-                })
+
+                window.plugin.notification.local.isScheduled(id, function (isScheduled) {
+                    app.log('Notification with ID ' + id + ' is scheduled: ' + isScheduled);
+
+                    if (isScheduled)
+                        cordova.plugins.notification.local.cancel(id);
+
+                    cordova.plugins.notification.local.add({ id: id, text: text });
+                    app.log("cordova.plugins.notification.local.add id:" + id + " text:" + text);
+                    
+                });
+
+                //cordova.plugins.notification.local.getScheduledIds(function (scheduledIds) {
+                //    app.log("scheduledIds: " + scheduledIds);
+                //    if (scheduledIds && scheduledIds.indexOf(id) != -1) {
+                //        cordova.plugins.notification.local.update({ id: id, text: text });
+                //        app.log("LocalNotification.update: id:" + id + " text:" + text);
+                //    }
+                //    else {
+                //        cordova.plugins.notification.local.add({ id: id, text: text });
+                //        app.log("cordova.plugins.notification.local.add id:" + id + " text:" + text);
+                //    }
+                //})
             } catch (err) {
-                    this.allowSedule = false;
-                    app.log("cordova.plugins.notification.local.get: " + err);
+                    //this.allowSedule = false;
+                app.log("cordova.plugins.notification.local.isScheduled: " + err);
                     return;
                 }
         });
@@ -42,14 +55,13 @@ var LocalNotification = {
         if (!this.allowSedule)
             return;
 
-        cordova.plugins.notification.local.clear(id, callback);
-        //cordova.plugins.notification.local.clear([10,20,30], callback);
+        cordova.plugins.notification.local.cancel(id);
     },
     clearAll: function (callback) {
         if (!this.allowSedule)
             return;
 
-        cordova.plugins.notification.local.clearAll(callback);
+        cordova.plugins.notification.local.cancelAll();
     },
     hasPermission: function (callback) {
         var self = this;
