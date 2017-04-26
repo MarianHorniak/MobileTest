@@ -67,10 +67,10 @@
         //}
     },
     info: function (message) {
-        Info(message);
+        document.getElementById("lblResult").innerHTML = document.getElementById("lblResult").innerHTML + "<br/>Info: " + message;
     },
     log: function (message) {
-        Log(message);
+        document.getElementById("lblResult").innerHTML = document.getElementById("lblResult").innerHTML + "<br/>" + message;
     },
     initialize: function () {
         app.log("app.initialize");

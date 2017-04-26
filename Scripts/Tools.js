@@ -2,20 +2,21 @@
 
 function Log(message)
 {
-    console.log(message);
-    LogArray.addMessage(message, "Log");
+    document.getElementById("lblResult").innerHTML = document.getElementById("lblResult").innerHTML + "<br/>" + err.message;
+    //console.log(message);
+    //LogArray.addMessage(message, "Log");
 }
 
 
 function Alert(message)
 {
     alert(message);
-    LogArray.addMessage(message, "Alert");
+    //LogArray.addMessage(message, "Alert");
 }
 
 function Info(message) {
     alert(message);
-    LogArray.addMessage(message, "Info");
+    document.getElementById("lblResult").innerHTML = document.getElementById("lblResult").innerHTML + "<br/>Info: " + err.message;
 }
 
 

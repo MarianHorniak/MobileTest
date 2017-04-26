@@ -24,8 +24,6 @@
     Results: <br />
     <label id="lblResult">results....</label>
 
-    
-
     <script src="cordova.js"></script>
     <script src="Scripts/Tools.js"></script>
     <script src="Scripts/LogArray.js"></script>
@@ -37,6 +35,7 @@
 
         function notify() {
             try {
+                document.getElementById("lblResult").innerHTML = "";
                 LocalNotification.schedule("1", "Notify message: " + Date.now(), true);
             }
             catch (err) {

@@ -20,17 +20,7 @@ var LocalNotification = {
         }
 
         this.hasPermission(function () {
-            //if (test) {
-            //    try{
-            //        cordova.plugins.notification.local.update({ id: id, text: text });
-            //        app.log("LocalNotification.update: id:" + id + " text:" + text);
-            //    }
-            //    catch (err) {
-            //        cordova.plugins.notification.local.schedule({ id: id, text: text });
-            //        app.log("LocalNotification.schedule: id:" + id + " text:" + text);
-            //    }
-            //}
-            //else {
+            try {
                 cordova.plugins.notification.local.get(id, function (notifications) {
                     if (!notifications || notifications.length === 0) {
                         cordova.plugins.notification.local.schedule({ id: id, text: text });
@@ -41,7 +31,11 @@ var LocalNotification = {
                         app.log("LocalNotification.update: id:" + id + " text:" + text);
                     }
                 })
-            //}
+            } catch (err) {
+                    this.allowSedule = false;
+                    app.log("cordova.plugins.notification.local.get: " + err);
+                    return;
+                }
         });
     },
     clear: function (id, callback) {
