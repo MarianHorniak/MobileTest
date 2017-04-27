@@ -16,7 +16,7 @@
 
     getAndroidPath: function () {
         if (app.isDevice) {
-            var path = window.location.href.subst(0, window.location.href.lastIndexOf('/'));
+            var path = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
             return path;
         }
         else return "";
