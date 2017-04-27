@@ -2,8 +2,8 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "sk.datastream.mobiletestinternal"
-        versionCode = "125"
-        version     = "1.2.5">
+        versionCode = "126"
+        version     = "1.2.6">
  
     <name>Mobile TESTS</name>
   

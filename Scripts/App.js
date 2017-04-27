@@ -14,6 +14,14 @@
         else return "";
     },
 
+    getAndroidPath: function () {
+        if (app.isDevice) {
+            var path = "/android_asset/www/";
+            return path;
+        }
+        else return "";
+    },
+
     registerEvents: function () {
         app.log("app.registerEvents");
         var self = this;
@@ -64,13 +72,13 @@
 
                 cordova.plugins.notification.local.setDefaults({
                     title: "Mobile test",
-                    icon: app.getPhoneGapPath() + 'img/phonegapicon.png',
+                    icon: app.getAndroidPath() + 'img/phonegapicon.png',
                     //smallIcon: 'res://cordova',
                     //sound: null, //ticha ...
                 });
                 
                 cordova.plugins.notification.local.onclick = function (id, state, json) {
-                    alert("notification.local.onclick id:" + id + " state:" + state);
+                    app.log("notification.local.onclick id:" + id + " state:" + state);
                 };
 
                 app.log("LocalNotification.setDefaults OK, icon: " + app.getPhoneGapPath() + 'img/phonegapicon.png');
