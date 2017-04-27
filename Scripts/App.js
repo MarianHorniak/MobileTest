@@ -51,6 +51,22 @@
 
         try {
             LocalNotification.registerPermission();
+            LocalNotification.hasPermission(function () {
+
+                cordova.plugins.notification.local.setDefaults({
+                    title: "Taxi driver",
+                    icon: app.getPhoneGapPath() + 'img/phonegapicon.png',
+                    //smallIcon: 'res://cordova',
+                    //sound: null, //ticha ...
+                });
+                
+                cordova.plugins.notification.local.onclick = function (id, state, json) {
+                    alert("notification.local.onclick id:" + id + " state:" + state);
+                };
+
+                app.log("LocalNotification.setDefaults OK");
+
+            });
         }
         catch (err) {
             app.log("LocalNotification.registerPermission(): " + err);
