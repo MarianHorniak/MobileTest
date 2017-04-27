@@ -16,7 +16,7 @@
 
     getAndroidPath: function () {
         if (app.isDevice) {
-            var path = "/android_asset/www/";
+            var path = window.location.href.split('www')[0] + 'www/';
             return path;
         }
         else return "";
@@ -76,12 +76,23 @@
                     //smallIcon: 'res://cordova',
                     //sound: null, //ticha ...
                 });
-                
-                cordova.plugins.notification.local.onclick = function (id, state, json) {
-                    app.log("notification.local.onclick id:" + id + " state:" + state);
-                };
 
-                app.log("LocalNotification.setDefaults OK, icon: " + app.getPhoneGapPath() + 'img/phonegapicon.png');
+                cordova.plugins.notification.local.on("click", function (id, state, json) {
+                    window.setTimeout(
+                        function () {
+                            app.log("notification.local.onclick id:" + id + " state:" + state);
+                            alert("clicked: " + id);
+                        }, 200
+                    )
+                });
+
+                //cordova.plugins.notification.local.onclick = function (id, state, json) {
+                //    app.log("notification.local.onclick id:" + id + " state:" + state);
+                //};
+
+                
+                app.log("window.location.href: " + window.location.href);
+                app.log("LocalNotification.setDefaults OK, icon: " + app.getAndroidPath() + 'img/phonegapicon.png');
 
             });
         }
