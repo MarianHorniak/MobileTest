@@ -4,7 +4,16 @@
     userAgent: "",
     platform: "",
     inBackground: false,
-    
+
+    getPhoneGapPath: function () {
+        if (app.isDevice) {
+            var path = window.location.pathname;
+            path = path.substr(path, path.length - 10);
+            return 'file://' + path;
+        }
+        else return "";
+    },
+
     registerEvents: function () {
         app.log("app.registerEvents");
         var self = this;
@@ -54,7 +63,7 @@
             LocalNotification.hasPermission(function () {
 
                 cordova.plugins.notification.local.setDefaults({
-                    title: "Taxi driver",
+                    title: "Mobile test",
                     icon: app.getPhoneGapPath() + 'img/phonegapicon.png',
                     //smallIcon: 'res://cordova',
                     //sound: null, //ticha ...
@@ -64,7 +73,7 @@
                     alert("notification.local.onclick id:" + id + " state:" + state);
                 };
 
-                app.log("LocalNotification.setDefaults OK");
+                app.log("LocalNotification.setDefaults OK, icon: " + app.getPhoneGapPath() + 'img/phonegapicon.png');
 
             });
         }
