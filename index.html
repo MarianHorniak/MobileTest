@@ -3,15 +3,23 @@
 <head>
     <title>Mobile TESTS->Tools</title>
 </head>
-<body onload="onLoad()">
+<body>
     
-    loading web page................
+    web page started
+    <input id="btnOpenSite" type="button" value="Open site" onclick="openSite()" />
+
     <script src="phonegap.js"></script>
     <script src="Scripts/Tools.js"></script>
     <script>
-        function onLoad() {
+
+        function openSite() {
             window.location = "https://test2obj.taxicab.sk";
         }
+
+
+        //function onLoad() {
+        //    window.location = "https://test2obj.taxicab.sk";
+        //}
     </script>
 </body>
 </html>
