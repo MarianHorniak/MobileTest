@@ -57,3 +57,6 @@ obj/Debug/MobileTest.pdb
 bin/MobileTest.pdb
 bin/MobileTest.pdb
 obj/Debug/MobileTest.dll
+*.pdb
+obj/Debug/MobileTest.csprojResolveAssemblyReference.cache
+*.dll
