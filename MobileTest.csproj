@@ -43,6 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="config.xml" />
+    <Content Include="index_orig.html" />
     <Content Include="LogView.html" />
     <Content Include="Scripts\LogArray.js" />
     <Content Include="tools.html" />

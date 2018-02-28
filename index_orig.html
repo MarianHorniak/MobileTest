@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile TESTS</title>
+    <meta charset="utf-8"/>
+</head>
+<body onload="onLoad()">
+    <div style="background-color:#00FFFF; width:100%; font-size: large;">TEST Mobile Apps 1.0.4</div>
+    <hr />
+    <div id="menuItems">
+        <table style="font-size: x-large; font-weight: bold">
+<!--            <tr><td><a href="LogView.html">Log</a><br/></td></tr>
+            <tr></tr>-->
+            <tr><td><a href="fg.html">Foreground</a><br/></td></tr>
+            <tr></tr>
+            <tr><td><a href="tools.html">Tools</a><br/></td></tr>
+        </table>
+    </div>
+    
+    
+    <script src="phonegap.js"></script>
+    <script src="Scripts/Tools.js"></script>
+
+
+    <script>
+        function onLoad() {
+            
+            document.addEventListener("deviceready", onDeviceReady, false);
+        };
+        function onDeviceReady() {
+            Log("onDeviceReady");
+        };
+        
+
+    </script>
+
+</body>
+</html>
