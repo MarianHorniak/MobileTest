@@ -43,13 +43,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="config.xml" />
+    <Content Include="index_opensite.html" />
     <Content Include="index_orig.html" />
     <Content Include="LogView.html" />
+    <Content Include="Scripts\App.js" />
+    <Content Include="Scripts\LocalNotification.js" />
     <Content Include="Scripts\LogArray.js" />
-    <Content Include="tools.html" />
     <Content Include="fg.html" />
     <Content Include="img\phonegapicon.png" />
     <Content Include="index.html" />
+    <Content Include="Scripts\Navigator.js" />
     <Content Include="Scripts\Tools.js" />
     <Content Include="tts.html" />
     <Content Include="Web.config" />
