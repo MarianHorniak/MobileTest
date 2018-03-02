@@ -1,5 +1,0 @@
-D:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\bin\MobileTest.dll
-D:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\bin\MobileTest.pdb
-D:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\obj\Debug\MobileTest.csprojResolveAssemblyReference.cache
-D:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\obj\Debug\MobileTest.dll
-D:\dfprojekt2008\ESA\ESA.MobileApps\MobileTest\MobileTest\obj\Debug\MobileTest.pdb
